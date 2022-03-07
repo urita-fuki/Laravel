@@ -16,3 +16,6 @@ Route::get('/', function () {
 });
 
 Route::get('hello', 'HelloController@index');
+Route::post('hello','HelloController@post');
+
+//実習問題
