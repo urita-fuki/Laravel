@@ -19,3 +19,10 @@ Route::get('hello', 'HelloController@index');
 Route::post('hello','HelloController@post');
 
 //実習問題
+//2-1
+Route::get('jissyu', 'JissyuController@index');
+
+//3-1
+Route::get('jissyu3', 'Jissyu3_1Controller@index');
+Route::post('jissyu3', 'Jissyu3_1Controller@post');
+
