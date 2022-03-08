@@ -11,7 +11,7 @@ class Jissyu3_1Controller extends Controller
         $data = [
             'msg'=>'お名前を入力下さい。',
         ];
-        return view('jissyu3.index', $data);
+        return view('jissyu3_1.input', $data);
     }
 
     public function post(Request $request)
@@ -20,7 +20,7 @@ class Jissyu3_1Controller extends Controller
         $data = [
             'msg'=>'こんにちは、' . $msg . 'さん！',
         ];
-        return view('jissyu3.index', $data);
+        return view('jissyu3_1.output', $data);
     }
 
 }
