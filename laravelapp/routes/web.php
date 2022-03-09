@@ -11,6 +11,8 @@
 |
 */
 
+use App\Http\Middleware\HelloMiddleware;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -19,10 +21,16 @@ Route::get('hello', 'HelloController@index');
 Route::post('hello','HelloController@post');
 
 //実習問題
-//2-1
-Route::get('jissyu', 'JissyuController@index');
+//2_1
+Route::get('jissyu2', 'JissyuController@index');
 
-//3-1
+//3_1
 Route::get('jissyu3', 'Jissyu3_1Controller@index');
 Route::post('jissyu3', 'Jissyu3_1Controller@post');
 
+//3_2
+Route::get('jissyu4', 'Jissyu3_2Controller@index');
+Route::post('jissyu4', 'Jissyu3_2Controller@post');
+
+//3_3
+Route::get('jissyu5', 'Jissyu3_3Controller@index');
