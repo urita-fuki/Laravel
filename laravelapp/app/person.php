@@ -9,7 +9,7 @@ class Person extends Model
 {
     protected $quarded = array('id');
 
-    public static $rules = arrey(
+    public static $rules = array(
         'name' => 'required',
         'mail' => 'email',
         'age' => 'integer|min:0|max:150'
@@ -18,5 +18,10 @@ class Person extends Model
     public function getData()
     {
         return $this->id . ':' . $this->name . '(' . $this->age . ')';
+    }
+
+    public function boards()
+    {
+        return $this->hasMany('App\Board');
     }
 }

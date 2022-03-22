@@ -3,7 +3,7 @@
 @section('title', 'Person.find')
 
 @section('menubar')
-    @perent
+    @parent
     検索ページ
 @endsection
 

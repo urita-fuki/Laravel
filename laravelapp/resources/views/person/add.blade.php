@@ -3,7 +3,7 @@
 @section('title', 'Person.Add')
 
 @section('menubar')
-    @perent
+    @parent
     新規作成ページ
 @endsection
 
