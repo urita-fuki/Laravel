@@ -1,0 +1,7 @@
+@startuml jissyu2_1
+actor ユーザ
+boundary ブラウザ
+control web.php
+
+ユーザ　-> ブラウザ:該当
+@enduml

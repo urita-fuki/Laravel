@@ -11,7 +11,7 @@ class Jissyu3_2Controller extends Controller
         $data = [
             'msg'=>'必要事項を入力してください',
         ];
-        return view('jissyu3_2input', $data);
+        return view('jissyu3_2.input', $data);
     }
 
     public function post(Request $request)
@@ -21,7 +21,7 @@ class Jissyu3_2Controller extends Controller
             'mail'=>$request->mail,
             'age'=>$request->$age
         ];
-        return view('jissyu3_2output', ['data'=>$data]);
+        return view('jissyu3_2.output', ['data'=>$data]);
     }
 
 }
