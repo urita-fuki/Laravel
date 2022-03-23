@@ -39,6 +39,13 @@ Route::get('board/add', 'BoardController@add');
 Route::post('board/add','BoardController@create');
 
 
+Route::resource('rest', 'RestappController');
+
+Route::get('hello/rest', 'HelloController@rest');
+
+Route::get('hello/session', 'HelloController@ses_get');
+Route::post('hello/session','HelloController@ses_put');
+
 //実習問題
 //2_1
 Route::get('jissyu2', 'JissyuController@index');
@@ -88,3 +95,9 @@ Route::get('jissyu12/edit', 'Jissyu5_3Controller@edit');
 Route::post('jissyu12/update', 'Jissyu5_3Controller@update');
 Route::get('jissyu12/del', 'Jissyu5_3Controller@del');
 Route::post('jissyu12/remove', 'Jissyu5_3Controller@remove');
+
+//jissyu7_1
+Route::resource('___(1)___', '___(2)___');
+Route::post('___(3)___', '___(4)___');	
+//Resourcefulにはfind()メソッドはないので追加
+Route::get('___(5)___', '___(6)___');
