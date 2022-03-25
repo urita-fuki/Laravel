@@ -56,7 +56,7 @@ class Jissyu7_1Controller extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate(___(10)___, Person::___(11)___);
+        $this->validate($request, Person::);
         $person = new Person;
         $form = $request->all();
         unset($form['_token']);
@@ -123,7 +123,7 @@ class Jissyu7_1Controller extends Controller
     public function destroy($id)
     {
         Person::find(___(16)___)->delete();
-        return redirect('/jissyu7_1');
+        return redirect('/jissyu7_1');*
 
     }
 }

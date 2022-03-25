@@ -4,14 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 use APP\Http\Requests\HelloRequest;
+use App\Person;
 use Validator;
 
 class HelloController extends Controller
 {
     public function index(Request $request)
     {
-      $validator = Validator::make($request->query(),[
+      /*$validator = Validator::make($request->query(),[
         'id' => 'required',
         'pass' => 'required',
       ]);
@@ -20,9 +22,33 @@ class HelloController extends Controller
       }else{
         $msg = 'ID/PASSを受け付けました。フォームを入力して下さい。';
       }
-      return view('hello.index', ['msg'=>$msg,]);
-    }
+      return view('hello.index', ['msg'=>$msg,]);*/
 
+     $user = Auth::user();
+     $sort = $request->sort;
+     $items = Person::orderBy($sort, 'asc')->simplePaginate(5);
+     $param = ['items' => $items, 'sort' => $sort, 'user' => $user];
+     return view('hello.index', $param);
+    }
+ 
+    public function getAuth(Request $request)
+    {
+      $param = ['message' => 'ログインしてください。'];
+      return view('hello.auth', $param);
+    }
+    
+    public function postAuth(Request $request)
+    {
+      $email = $request->email;
+      $password = $request->password;
+      if (Auth::attempt(['email' => $email, 'password' => $password])) {
+        $msg = 'ログインしました。(' . Auth::user()->name . ')';
+      }else {
+        $msg = 'ログインに失敗しました。';
+      }
+      return view('hello.auth', ['message' => $msg]);
+    }
+    
     public function post(Request $request)
     {
       $rules = [

@@ -17,9 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('hello', 'HelloController@index');
+Route::get('hello', 'HelloController@index')
+    ->middleware('auth');
 Route::post('hello','HelloController@post');
 
+
+Route::get('hello/auth', 'HelloController@getAuth');
+Route::post('hello/auth','HelloController@postAuth');
 
 Route::get('person','PersonController@index');
 
@@ -97,7 +101,11 @@ Route::get('jissyu12/del', 'Jissyu5_3Controller@del');
 Route::post('jissyu12/remove', 'Jissyu5_3Controller@remove');
 
 //jissyu7_1
-Route::resource('___(1)___', '___(2)___');
-Route::post('___(3)___', '___(4)___');	
+//Route::resource('___(1)___', '___(2)___');
+//Route::post('___(3)___', '___(4)___');	
 //Resourcefulにはfind()メソッドはないので追加
-Route::get('___(5)___', '___(6)___');
+//Route::get('___(5)___', '___(6)___');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
