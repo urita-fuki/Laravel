@@ -100,11 +100,48 @@ Route::post('jissyu12/update', 'Jissyu5_3Controller@update');
 Route::get('jissyu12/del', 'Jissyu5_3Controller@del');
 Route::post('jissyu12/remove', 'Jissyu5_3Controller@remove');
 
+//jissyu6_1
+Route::get('jissyu13', 'Jissyu6_1Controller@index');
+Route::post('jissyu13/find', 'Jissyu6_1Controller@find');
+
+//jissyu6_3
+Route::get('jissyu14', 'Jissyu6_3Controller@index');
+Route::post('jissyu14/find', 'Jissyu6_3Controller@find');
+Route::get('jissyu14/show', 'Jissyu6_3Controller@show');
+Route::get('jissyu14/add', 'Jissyu6_3Controller@add');
+Route::post('jissyu14/create', 'Jissyu6_3Controller@create');
+Route::get('jissyu14/edit', 'Jissyu6_3Controller@edit');
+Route::post('jissyu14/update', 'Jissyu6_3Controller@update');
+Route::get('jissyu14/del', 'Jissyu6_3Controller@del');
+Route::post('jissyu14/remove', 'Jissyu6_3Controller@remove');
+
 //jissyu7_1
 //Route::resource('___(1)___', '___(2)___');
 //Route::post('___(3)___', '___(4)___');	
 //Resourcefulにはfind()メソッドはないので追加
 //Route::get('___(5)___', '___(6)___');
+
+//kouka2_1
+Route::get('kouka2_1', 'Kouka2_1Controller@index');
+Route::post('kouka2_1/find', 'Kouka2_1Controller@find');
+
+//kouka2_2
+Route::get('kouka2_2', 'Kouka2_2Controller@index');
+Route::post('kouka2_2/find', 'Kouka2_2Controller@find');
+Route::get('kouka2_2/show', 'Kouka2_2Controller@show');
+Route::get('kouka2_2/add', 'Kouka2_2Controller@add');
+Route::post('kouka2_2/create', 'Kouka2_2Controller@create');
+Route::get('kouka2_2/edit', 'Kouka2_2Controller@edit');
+Route::post('kouka2_2/update', 'Kouka2_2Controller@update');
+Route::get('kouka2_2/del', 'Kouka2_2Controller@del');
+Route::post('kouka2_2/remove', 'Kouka2_2Controller@remove');
+
+//kouka3_1
+ 
+
+
+Route::get('hello/auth', 'HelloController@getAuth');
+Route::post('hello/auth','HelloController@postAuth');
 
 Auth::routes();
 
