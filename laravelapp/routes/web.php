@@ -136,13 +136,10 @@ Route::post('kouka2_2/update', 'Kouka2_2Controller@update');
 Route::get('kouka2_2/del', 'Kouka2_2Controller@del');
 Route::post('kouka2_2/remove', 'Kouka2_2Controller@remove');
 
-//kouka3_1
- 
-
-
 Route::get('hello/auth', 'HelloController@getAuth');
 Route::post('hello/auth','HelloController@postAuth');
 
+//kouka3_1
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>マイページ</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
@@ -20,81 +20,119 @@
                 margin: 0;
             }
 
-            .full-height {
-                height: 100vh;
-            }
-
             .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
             }
-
             .position-ref {
-                position: relative;
-            }
-
-            .top-right {
                 position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
+                left: 600px;
+                top: 200px;
             }
 
             .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
+                font-size: 50px;
             }
 
             .m-b-md {
-                margin-bottom: 30px;
+                position: absolute;
+                right: 10px;
+                top: 0px;
             }
+
+            .one{
+                position: absolute;
+                left: 600px;
+                top:  150px;
+            }
+
+            .two{
+                position: absolute;
+                left: 600px;
+                top:  300px;
+            }
+
+            .three{
+                position: absolute;
+                left: 30px;
+                top:  10px;
+            }
+
+            .fou{
+                position: absolute;
+                left: 630px;
+                top:  200px;
+            }
+
+            .five{
+                position: absolute;
+                left: 630px;
+                top:  350px;
+            }
+
+            .five{
+                position: absolute;
+                left: 630px;
+                top:  350px;
+            }
+
+            .naiyou1{
+                position: absolute;
+                left: 400px;
+                top:  350px;
+            }
+
+            .naiyou2{
+                position: absolute;
+                right: 400px;
+                top:  350px;
+            }
+
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+        @if (Route::has('login'))
+            @auth
+                <div class="three">
+                    <a href="{{ url('/home') }}">ログアウト</a>
+                </div>
+            @else
+                <div class="one">
+                    <p>ログインはこちら</p>
+                </div>
+                <div class="two">
+                    <p>初めてに方はこちら</p>
+                </div>
+                <div class="fou">                            
+                    <a href="{{ route('login') }}">ログイン</a>
+                </div>
+            @if (Route::has('register'))
+                <div class="five">
+                    <a href="{{ route('register') }}">新規登録</a>
                 </div>
             @endif
+            @endauth
+        @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+        <div class="content">
+            <div class="title m-b-md">
+                @if (Route::has('login'))
+                    @auth
+                        <a href="{{ url('/home') }}">マイページ</a>
+                    @else
+                        <a href="{{ route('login') }}">ログインor新規作成画面</a>
+                    @endauth
+                @endif
+            </div>                
+        </div>    
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+        <div class="links">
+            @auth 
+                <div class="naiyou1">
+                    <a href="https://www.youtube.com/">Youtube</a>
                 </div>
-            </div>
+                <div class="naiyou2">
+                    <a href="https://weather.yahoo.co.jp/weather/">お天気</a>
+                </div>
+            @endauth
         </div>
     </body>
 </html>
